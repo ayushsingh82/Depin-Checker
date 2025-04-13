@@ -2,6 +2,7 @@
 /** @import { FastifyInstance, FastifyReply } from 'fastify' */
 
 import { today } from './utils/date.js'
+import { uploadToFilecoin } from '../utils/filecoinStorage.js'
 
 const depinRoutesDefaultParamsSchema = {
   type: 'object',
@@ -480,13 +481,14 @@ export const depinRoutes = (app) => {
  * In a real implementation, this would use Web3.Storage or similar
  */
 async function storeOnFilecoin(depin, data) {
-  // In a real implementation:
-  // 1. Format the data as needed
-  // 2. Use Web3.Storage or similar to store on Filecoin
-  // 3. Return the CID for verification
-  
-  console.log(`Storing ${depin} data on Filecoin:`, data)
-  return `bafybeig6xv5nwphfmvcnkfg6qjj6ui6qoqcz5hp4vbzwyqppafw5oqtfay` // Example CID
+  try {
+    const result = await uploadToFilecoin(depin, data);
+    console.log(`Data stored on Filecoin with CID: ${result.cid}`);
+    return result.cid;
+  } catch (error) {
+    console.error('Failed to store data on Filecoin:', error);
+    throw error;
+  }
 }
 
 export default depinRoutes 

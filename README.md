@@ -57,5 +57,5 @@ These data points are fetched via APIs, processed off-chain in the Checker subne
 
 ---
 
-## 📂 Project Structure
+
 
