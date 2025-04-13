@@ -4,20 +4,37 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div className="flex flex-col items-center">
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center text-center min-h-[85vh] w-full bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-5">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">DePIN Checker</h1>
-        <p className="text-2xl md:text-3xl mb-4">Verifiable Reputation Data for DePIN Networks</p>
-        <p className="text-xl max-w-3xl mb-10 text-gray-200">
-          Track and analyze node performance, uptime, and geographic distribution across Walrus, Helium, and Akash networks with data securely stored on Filecoin.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/compare" className="py-3 px-8 text-xl bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1">
-            Compare Networks
-          </Link>
-          <Link to="/walrus" className="py-3 px-8 text-xl bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-            Explore Data
-          </Link>
+      {/* Hero Section - Updated with white background */}
+      <div className="flex flex-col items-center justify-center text-center min-h-[85vh] w-full bg-white text-gray-800 p-5 relative overflow-hidden">
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">DePIN Checker</h1>
+          <p className="text-2xl md:text-3xl mb-4 text-gray-700 font-medium">Verifiable Reputation Data for DePIN Networks</p>
+          <p className="text-xl max-w-3xl mb-10 text-gray-600 mx-auto">
+            Track and analyze node performance, uptime, and geographic distribution across Walrus, Helium, and Akash networks with data securely stored on Filecoin.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/compare" className="py-3 px-8 text-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              Compare Networks
+            </Link>
+            <Link to="/walrus" className="py-3 px-8 text-xl bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              Explore Data
+            </Link>
+          </div>
+        </div>
+        
+        {/* Floating cards */}
+        <div className="absolute top-1/4 -left-16 w-64 bg-white rounded-lg shadow-xl p-4 transform -rotate-12 opacity-80 hidden lg:block">
+          <div className="h-3 w-3/4 bg-blue-400 rounded-full mb-2"></div>
+          <div className="h-2 w-1/2 bg-blue-300 rounded-full"></div>
+        </div>
+        <div className="absolute bottom-1/4 -right-16 w-64 bg-white rounded-lg shadow-xl p-4 transform rotate-12 opacity-80 hidden lg:block">
+          <div className="h-3 w-3/4 bg-teal-400 rounded-full mb-2"></div>
+          <div className="h-2 w-1/2 bg-teal-300 rounded-full"></div>
         </div>
       </div>
       

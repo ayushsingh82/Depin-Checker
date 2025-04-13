@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-gray-900 to-blue-900 h-20 flex justify-center items-center sticky top-0 z-50 shadow-md">
+    <nav className="bg-gradient-to-r from-gray-900 to-blue-900 h-20 flex justify-center items-center sticky top-0 z-50 shadow-md border-b-2 border-blue-600">
       <div className="flex justify-between items-center w-full max-w-7xl px-5">
         <Link to="/" className="text-white text-3xl font-bold no-underline flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +40,7 @@ const Navbar = () => {
         {/* Desktop menu */}
         <ul className="hidden md:flex list-none m-0 p-0 items-center">
           <li className="ml-5">
-         
+          
           </li>
           <li className="ml-5">
             <Link to="/walrus" className={`${isActive('/walrus')} no-underline text-lg py-2 px-3 transition-all duration-300 hover:text-blue-400 font-medium`}>
@@ -62,15 +62,12 @@ const Navbar = () => {
               Compare
             </Link>
           </li>
-          <li className="ml-5">
-           
-          </li>
         </ul>
       </div>
       
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-gray-900 shadow-lg">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-gray-900 shadow-lg border-b-2 border-blue-600">
           <ul className="flex flex-col list-none m-0 p-0">
             <li>
               <Link 
@@ -115,15 +112,6 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Compare
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/test" 
-                className="block py-3 px-5 no-underline text-lg bg-blue-600 text-white hover:bg-blue-700"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Test
               </Link>
             </li>
           </ul>
