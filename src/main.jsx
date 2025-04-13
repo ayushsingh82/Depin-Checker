@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import Home from './components/Home.jsx'
-import Test from './components/Test.jsx'
+
 import WalrusData from './components/WalrusData.jsx'
 import HeliumData from './components/HeliumData.jsx'
 import AkashData from './components/AkashData.jsx'
@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="helium" element={<HeliumData />} />
           <Route path="akash" element={<AkashData />} />
           <Route path="compare" element={<CompareData />} />
-          <Route path="test" element={<Test />} />
+      
         </Route>
       </Routes>
     </BrowserRouter>
