@@ -35,7 +35,7 @@ These data points are fetched via APIs, processed off-chain in the Checker subne
 2. **Score Calculation**: Each node is scored based on uptime, reliability, contribution, and stability.
 3. **Proof Generation**: Reputation proofs are generated and cryptographically signed.
 4. **Filecoin Storage**: All reports are uploaded to Filecoin for transparency and auditability.
-5. **Frontend Dashboard** *(optional)*: Displays reputation scores and visualizations.
+5. **Frontend Dashboard** : Displays reputation scores and visualizations.
 
 ---
 
